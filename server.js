@@ -9,6 +9,9 @@ var app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+var compression = require('compression');
+app.use(compression());
 // Make public a static folder
 app.use(express.static(path.join(__dirname, "public")));
 
